@@ -10,7 +10,6 @@ class CreateAgency < ActiveRecord::Migration
       t.string :gps_coordinates
       t.timestamps
     end
-    # Agency.create(:ref_number => 01, :agency_name => "Dept of Redundancy", :agency_location => "Nowhere")
   end
 
   def down

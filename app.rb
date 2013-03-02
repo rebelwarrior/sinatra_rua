@@ -19,18 +19,18 @@ class SinatraAPI < Sinatra::Base
   end
 
   get '/id/:id' do
-     Agency.find(params[:id]).to_json
+    Agency.find_by_ref_number(params[:id]).to_json
   end
 
   get '/all' do
     Agency.all.to_json
   end
 
-
-  # get '/agency/:name' do
-    # data = Agency.find("agency_name", params[:name])
-    # data.to_json
-  # end
+  get '/search/:name' do
+    q = "%#{params[:name].downcase}%"
+    data = Agency.where('lower(agency_name) LIKE ?', q)
+    data.to_json
+  end
 
   get '/' do
     'Hello World'
