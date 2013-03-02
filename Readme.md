@@ -10,7 +10,7 @@ Instalar ruby primero (sugiero usar [RailsInstaller](http://railsinstaller.org/)
 Este programa depende de las siguientes 'gems': 
  
 *  sinatra,  
-*  active_record,  
+*  activerecord,  
 *  sinatra-activerecord,  
 *  sqlite3,  
 *  json,  

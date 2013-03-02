@@ -1,8 +1,9 @@
 #Gemfile
-
+source 'https://rubygems.org'
+gem 'rack'
 gem 'sinatra'
 gem 'sqlite3'
-gem 'active_record'
+gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'json'
 gem 'rack-contrib'
