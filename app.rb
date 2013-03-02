@@ -5,7 +5,7 @@ require 'sinatra/activerecord'
 require 'sqlite3'
 require 'json'
 ## Implement JSONP for security next
-# require 'rack/contrib/jsonp'
+require 'rack/contrib/jsonp'
 # use Rack::JSONP
 require './models.rb'
 
@@ -19,9 +19,7 @@ class SinatraAPI < Sinatra::Base
   end
 
   get '/id/:id' do
-     data = nil
-     data = Agency.find(params[:id]).to_json
-     data.to_json
+     Agency.find(params[:id]).to_json
   end
 
   get '/all' do

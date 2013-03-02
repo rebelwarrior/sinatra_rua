@@ -11,13 +11,7 @@ require "sinatra/activerecord/rake"
 #     Rake::Task['db:migrate'].invoke
 #     # Rake::Task['db:fixtures:load'].invoke
 #   end
-# end
-
-
-
-
-
-
+#end
 
 # namespace :db do
 #   desc "Migrate the database"

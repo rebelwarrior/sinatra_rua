@@ -5,6 +5,6 @@ ActiveRecord::Base.establish_connection(
 
 
 class Agency < ActiveRecord::Base
-  validates_uniqueness_of :agency_id
-  validates_presence_of :agency_id
+  validates_uniqueness_of :ref_number
+  validates_presence_of :ref_number, :agency_name
 end
