@@ -14,3 +14,8 @@ test:
 #   username: root
 #   password: 
 #   database: sinatra-template
+
+production: 
+  adapter: sqlite3
+  encoding: utf8
+  database: ../data/db.sqlite3

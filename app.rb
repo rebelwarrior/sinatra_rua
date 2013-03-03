@@ -1,3 +1,4 @@
+#encoding: utf-8
 # app.rb
 require 'sinatra/base'
 require 'active_record'
@@ -8,6 +9,12 @@ require 'json'
 require 'rack/contrib/jsonp'
 # use Rack::JSONP
 require './models.rb'
+
+def sanitize(sql_query)
+  sql_query[0..22].downcase.split('').each.select {|w| w =~ /[a-z]|[áéíóúü]/i}.join('') 
+end
+
+
 
 class SinatraAPI < Sinatra::Base
   configure :development do
@@ -27,13 +34,15 @@ class SinatraAPI < Sinatra::Base
   end
 
   get '/search/:name' do
-    q = "%#{params[:name].downcase}%"
+    q = "%#{sanitize(params[:name])}%"
     data = Agency.where('lower(agency_name) LIKE ?', q)
     data.to_json
   end
 
   get '/' do
     'Hello World'
+    # erb :home 
   end
 end
 
+__END__
